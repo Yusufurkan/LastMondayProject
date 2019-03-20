@@ -28,7 +28,7 @@ public class JsonPathDay2 {
                 given()
                         .auth().preemptive().basic("yufu", "yufu").
                         when()
-                        .log().all()
+
                         .get("/posts");
 
         JsonPath jp = response.jsonPath();

@@ -26,7 +26,6 @@ public class PracticeJsonPath {
         given()
                 .relaxedHTTPSValidation().
         when()
-                .log().all()
                 .get("/users/{1}", 1);
 
 

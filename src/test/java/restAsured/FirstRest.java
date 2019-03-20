@@ -10,6 +10,7 @@ public class FirstRest {
 
     @BeforeClass
     public void setUP(){
+
         baseURI = "https://www.example.yufu.dev.cc/wp-json";
         basePath = "/wp/v2/";
 
