@@ -69,7 +69,8 @@ public class JsonDataBind {
                 "                }";
 
         ObjectMapper om = new ObjectMapper();
-        Driver obj = om.readValue(json, Driver.class);
+        DriverPojo obj = om.readValue(json, DriverPojo.class);
+        System.out.println(obj);
 
         System.out.println(om.writeValueAsString(obj));
 
@@ -105,7 +106,6 @@ public class JsonDataBind {
         //         typeReference is a abstract class thats why we have to close with body {} // it gives you ability to assign type
         List<Person> list = om.readValue(json, new TypeReference<List<Person>>() {});
         System.out.println(om.writeValueAsString(people));
-
 
 
     }

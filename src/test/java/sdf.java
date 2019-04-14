@@ -17,7 +17,25 @@ public class sdf {
 //        System.out.println(reverse("Sky is blue"));
 //        System.out.println(reversewords("noon"));
 
+        System.out.println(solution("The quick brown fox jumps over the lazy dog", 39));
     }
+
+
+
+    public static String solution(String message, int K) {
+        String [] words = message.split(" ");
+        String result = "";
+
+        for(int i = 0; i < words.length ; i++){
+            if(words[i].length() + result.length() <= K){
+                result +=words[i] + " ";
+            }else{break;}
+
+        }
+        return result.trim();
+
+    }
+
 
 
     public static int[] test(int... arr) {
@@ -164,6 +182,9 @@ public class sdf {
         System.out.println(a.matches(b));
     }
 
+    public static String solution(String name, String surname, int age) {
 
+        return name.substring(0,2) + surname.substring(0,2) + age;
+    }
 
 }

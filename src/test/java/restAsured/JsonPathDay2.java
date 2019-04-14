@@ -74,8 +74,8 @@ public class JsonPathDay2 {
         Map<String, Object> map = jp.getMap("MRData.DriverTable.Drivers[0]");
         Map<String, String> map1 = jp.getMap("MRData.DriverTable.Drivers[0]", String.class, String.class);
 
-        System.out.println(map);
-        System.out.println(map.keySet());
+//        System.out.println(map);
+//        System.out.println(map.keySet());
 
 
         // jsonpath rest assured use GPath from groovy
@@ -84,7 +84,7 @@ public class JsonPathDay2 {
                                                                     //.find returns the first element
         System.out.println(jp.getList("MRData.DriverTable.Drivers.findAll{ it.givenName == 'George'}"));
 
-        System.out.println("Driver name george and american");
+        System.out.println("DriverPojo name george and american");
         System.out.println(jp.getList("MRData.DriverTable.Drivers.findAll{ it.givenName == 'George'" +
                 "&& it.nationality== 'American'}"));
     }
@@ -139,12 +139,12 @@ public class JsonPathDay2 {
         JsonPath jp = response.jsonPath();
 
         //single json object
-        // data binding ----> Binding jsoon field in POJO field
+        // data binding ----> Binding json field in POJO field
         // we need external deserializer from databinding
 
-        Driver driverObj = jp.getObject("MRData.DriverTable.Drivers[1]", Driver.class);
+        DriverPojo driverPojoObj = jp.getObject("MRData.DriverTable.Drivers[1]", DriverPojo.class);
 
-        System.out.println(driverObj);
+        System.out.println(driverPojoObj);
 
     }
 
@@ -154,12 +154,12 @@ public class JsonPathDay2 {
                 given().get("http://ergast.com/api/f1/drivers.json");
 
         //TODO ask how to use response as
-//        response.as(Driver );
+//        response.as(DriverPojo );
         JsonPath jp = response.jsonPath();
 
-        Driver driverObj = jp.getObject("MRData.DriverTable.Drivers[1]", Driver.class);
+        DriverPojo driverPojoObj = jp.getObject("MRData.DriverTable.Drivers[1]", DriverPojo.class);
 
-        System.out.println(driverObj);
+        System.out.println(driverPojoObj);
 
     }
 }

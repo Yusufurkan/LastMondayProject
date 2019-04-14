@@ -36,7 +36,7 @@ public class Hooks {
         }
 
         System.out.println("Closing driver");
-//     Driver.closeDriver();
+//     DriverPojo.closeDriver();
     }
 
 

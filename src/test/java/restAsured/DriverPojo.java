@@ -1,6 +1,9 @@
 package restAsured;
 
-public class Driver {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class DriverPojo {
 
     String driverId;
     String url;
@@ -9,10 +12,10 @@ public class Driver {
     String dateOfBirth;
     String nationality;
 
-    public Driver() {
+    public DriverPojo() {
     }
 
-    public Driver(String driverId, String url, String givenName, String familyName, String dateOfBirth, String nationality) {
+    public DriverPojo(String driverId, String url, String givenName, String familyName, String dateOfBirth, String nationality) {
         this.driverId = driverId;
         this.url = url;
         this.givenName = givenName;
@@ -24,7 +27,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return "DriverPojo{" +
                 "driverId='" + driverId + '\'' +
                 ", url='" + url + '\'' +
                 ", givenName='" + givenName + '\'' +
